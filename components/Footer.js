@@ -3,7 +3,7 @@ import { GlobeAltIcon, CurrencyRupeeIcon , ChevronUpIcon } from '@heroicons/reac
 
 const Footer = () => {
     return (
-        <div className='flex justify-between md:items-center py-5 border-t border-gray-200 shadow-2xl px-10'>
+        <div className='flex mt-3 justify-between md:items-center py-5 border-t border-gray-200 px-10'>
             <div className='flex gap-4 flex-col md:flex-row  text-gray-600 text-base'>
                 <h5>© 2023 Airbnb, Inc.</h5>
                 <ul className='gap-2 md:gap-4 flex flex-col md:flex-row justify-center md:items-center '>

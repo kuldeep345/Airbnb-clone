@@ -5,8 +5,21 @@ import SmallCard from '../components/smallCard'
 import MediumCard from '../components/MediumCard'
 import LargeCard from '../components/LargeCard'
 import Footer from '../components/Footer'
+import LoadingBar from 'react-top-loading-bar'
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 
 const Home = ({exploreData }) => {
+
+  const [progress, setProgress] = useState(0)
+  const router = useRouter()
+
+  useEffect(() => {
+    router.events.on("routeChangeStart", ()=>{setProgress(40)})
+    router.events.on("routeChangeComplete", ()=>{setProgress(100)})
+    router.events.on("routeChangeError", ()=>{setProgress(100)})
+  }, [router.query])
+  
 
  const cardData = [
     { img: 'https://a0.muscache.com/im/pictures/miso/Hosting-26117817/original/9da40e3c-5846-4359-bb41-05c27b09a8f5.jpeg?im_w=720', title: 'Outdoor getaways' },
@@ -27,6 +40,12 @@ const Home = ({exploreData }) => {
       </Head>
       
        <Header/>
+       <LoadingBar
+        color='#f11946'
+        progress={progress}
+        waitingTime={400}
+        onLoaderFinished={() => setProgress(0)}
+      />
        <Banner/>
 
        <main className='max-w-7xl mx-auto px-8 sm:px-16'>

@@ -7,9 +7,12 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.16",
+    "date-fns": "^2.29.3",
     "next": "latest",
     "react": "18.2.0",
+    "react-date-range": "^1.4.0",
     "react-dom": "18.2.0",
+    "react-top-loading-bar": "^2.3.1",
     "tailwind-scrollbar-hide": "^1.1.7"
   },
   "devDependencies": {
